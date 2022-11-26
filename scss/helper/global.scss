@@ -1,0 +1,131 @@
+body{
+    font-family:  $font-family;
+    line-height: 1.4;
+}
+h1,h2,h3{
+    line-height: 1.2;
+}
+
+.container{
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $gutter;
+    padding-right: $gutter;
+}
+.select, .button, .text{
+    font-family: inherit;
+    border: 0;
+    border-radius: $border-radius;
+    font-weight: bold;
+    background-color: #fff;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+}
+.icon {
+    display: inline-block;
+    width: 24px; 
+    height: 24px;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+   
+
+    
+  }
+
+a{
+    text-decoration: none;
+    color: inherit;
+    transition: .15s;
+}
+
+
+.button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: $finger-size;
+    background-color: $color-blue;
+    text-align: center;
+    color: #fff;
+
+    &-icon{
+        justify-content: center;
+        color: black;
+        padding-left: 0;
+        padding-right: 0;
+        width: $finger-size;
+        background-color: transparent;
+    }
+    &-full{
+        width: 100%;
+        
+    }
+    &-navy{
+        background-color: $color-navy;
+    }
+    
+}
+
+.text{
+    min-height: $finger-size;
+    border-radius: $border-radius;
+    color: $color-navy; 
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 83%;
+    &::placeholder{
+        color: $color-navy; 
+    }
+}
+
+.select{
+    appearance: none;
+    display: inline-block;
+    width: 100%;
+    height: $finger-size;
+    
+}
+
+.form-item{
+    position: relative;
+
+    .icon{
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $color-navy;
+    
+    }
+    .text{
+        
+        padding-left: 40px;
+        
+    }
+    .select{
+        padding-left: 40px;
+    }
+    
+}
+
+.form-description{
+    margin-top: 5px;
+    font-size: $font-size;
+    @include mq("tablet"){
+        margin-top: 20px;
+    }
+    
+}
+.form-checkbox{
+    display: flex;
+    
+    
+}
+.checkbox{
+    margin-left: 10px;
+}

@@ -1,0 +1,125 @@
+$Header-height: 68px;
+.Header{
+     height: $Header-height;
+    .container{
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 64px;
+    }
+    &-logo{
+        img{
+            width: 144px;
+        }
+    }
+    &-switch{
+        position: relative;
+        left: 10px;
+        border: none;
+        background-color: #fff;
+        margin-left: auto;
+        @include mq{
+            display: none;
+        }
+        
+    }
+    &-menu{
+        pointer-events: none;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: .2s;
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: $Header-height;
+        padding-left: $gutter;
+        padding-right: $gutter;
+        padding-bottom: 20px;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 0 20px 30px rgba(black, .2);
+
+        .Header.menu-show &{
+            pointer-events: auto;
+            opacity: 1;
+            transform: translateY(0);
+            transition: 0s;
+        }
+
+        @include mq("tablet"){
+            pointer-events: auto;
+            opacity: 1;
+            transform: translateY(0);
+            margin-left: auto;
+            flex-direction: row;
+            position: static;
+            box-shadow: none;
+            background-color: transparent;
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+
+        }
+       
+    &-user{
+        margin-right: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include mq("tablet"){
+            flex-direction: row;
+        }
+        a{
+            width: 100%;
+            justify-content: center;
+            display: inline-flex;
+            align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            height: $finger-size;
+        &:hover{
+            background-color: #eee;
+        }
+        }
+    }
+    &-property{
+        margin-top: 20px;
+        justify-content: center;
+        @include mq("tablet"){
+            margin-top: 0;
+        }
+    }
+   
+    &-helper{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+
+        @include mq("tablet"){
+            margin-left: 20px;
+            margin-top: 0;
+        }
+        select{
+            appearance: none;
+            border: 1px solid #e0e6f1;
+            background-color: transparent;
+            padding-left: 10px;
+            padding-right: 10px;
+            height: $finger-size;
+            border-radius: 0;
+            color: $color-navy;
+            
+            &:nth-child(1){
+                border-bottom-left-radius: $border-radius;
+                border-top-left-radius: $border-radius;
+            }
+            &:nth-child(2){
+                border-bottom-right-radius: $border-radius;
+                border-top-right-radius: $border-radius;
+            }
+        }
+    }
+    }
+}
+

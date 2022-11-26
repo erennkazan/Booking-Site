@@ -1,0 +1,15 @@
+.Navigation{
+    background-color: $color-soft-blue;
+    height: 50px;
+
+    .container{
+     height: 100%;   
+     display: flex;
+     align-items: center;
+    }
+    &-item{
+        margin-right: 10px;
+        font-size: $font-size-small;
+        
+    }
+}
